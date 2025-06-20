@@ -1,0 +1,173 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+*::after, *::before {
+    box-sizing: inherit;
+}
+
+body {
+    height: 100vh;
+    font-family: 'JetBrains Mono';
+}
+
+header {
+    background-color: #423d3d;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.icon-page {
+    height: 60px;
+}
+
+.menu {
+    width: 80%;
+}
+
+.menu-toggle {
+    display: none;
+    font-size: clamp(0.5rem, 30px, 1rem);
+    text-decoration: none;
+    color: #000;
+    font-weight: 500;
+    border: 0.5px solid;
+    border-radius: 5px;
+    padding: 5px;
+    width: 100%;
+    background-color: #423d3d;
+    text-align: center;
+    cursor: pointer;
+}
+
+.menu-items {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-template-rows: repeat(auto-fill, minmax(80px, 1fr));
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.menu-items a {
+    font-size: clamp(0.5rem, 30px, 1rem);
+    text-decoration: none;
+    color: #000;
+    font-weight: 500;
+    border: 0.5px solid;
+    border-radius: 5px;
+    padding: 5px;
+    text-align: center;
+}
+
+.menu-items a:hover {
+    color: #1f0780;
+    transition: all 0.5s ease;
+}
+
+.menu-items a:not(:hover) {
+    color: #000;
+    transition: all 0.5s ease;
+}
+
+@media (max-width: 600px) {
+    header {
+        padding: 20px;
+    }
+    .icon-page {
+        display: none;
+    }
+    .menu-toggle {
+        display: block;
+        border: 0.5px solid;
+    }
+    .menu-items {
+        flex-direction: column;
+        margin-top: 1rem;
+        overflow: hidden;
+        max-height: 0;
+        opacity: 0;
+        transition: max-height 0.5s ease, opacity 0.3s ease;
+    }
+    .menu.open .menu-items {
+        max-height: 500px;
+        opacity: 1;
+    }
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    height: auto;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    gap: 30px;
+    width: 80vw;
+}
+
+.introduction {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 50px;
+    width: 65vw;
+}
+
+.introduction div {
+    order: 2;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.introduction img {
+    order: 1;
+    flex: 3;
+    max-width: 500px;
+    min-width: 400px;
+    max-height: 600px;
+    min-height: 400px;
+    grid-row: span 3;
+    grid-column: span 2;
+}
+
+.introduction div h1 {
+    flex: 1;
+    color: #333;
+    font-weight: 700;
+    font-size: clamp(1.5rem, 40px, 3rem);
+}
+
+.introduction div p {
+    flex: 3;
+    color: #888;
+    text-align: justify;
+    font-weight: 600;
+    font-size: clamp(1rem, 25px, 2rem);
+}
+
+.description {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    text-align: justify;
+    gap: 20px;
+}
+
+.description p {
+    color: #000;
+    font-weight: 500;
+    font-size: clamp(1rem, 15px, 2rem);
+    width: 70vw;
+}
