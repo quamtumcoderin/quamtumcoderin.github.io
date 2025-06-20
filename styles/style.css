@@ -68,11 +68,13 @@ header {
 
 .menu-items a:hover {
     color: #1f0780;
+    transform: scale(1.1);
     transition: all 0.5s ease;
 }
 
 .menu-items a:not(:hover) {
     color: #000;
+    transform: scale(1);
     transition: all 0.5s ease;
 }
 
