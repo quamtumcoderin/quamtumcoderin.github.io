@@ -220,6 +220,14 @@ main {
     gap: 10px;
     border-radius: 20px;
     box-shadow: 0 0 5px #c1c1c1;
+    opacity: 0;
+    animation: desplaceBottom 1s ease-in-out forwards;
+}
+
+@keyframes desplaceBottom {
+    to {
+        opacity: 1;
+    }
 }
 
 .rules-box:hover {

@@ -23,3 +23,13 @@ export function applyColors() {
         img.style.borderBottom = `6px solid ${colors[index]}`
     })
 }
+
+export function desplaceImgBox() {
+    const imgBoxes = document.querySelectorAll('.rules-box')
+    let delay = 0
+
+    imgBoxes.forEach(box => {
+        box.style.animationDelay = `${delay}s`
+        delay += 0.5
+    })
+}
