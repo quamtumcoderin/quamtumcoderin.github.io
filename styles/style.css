@@ -115,7 +115,6 @@ main {
 
 .introduction {
     display: flex;
-    flex-wrap: wrap;
     justify-content: center;
     gap: 50px;
     width: 65vw;
@@ -123,35 +122,47 @@ main {
 
 .introduction div {
     order: 2;
-    flex: 1;
     display: flex;
     flex-direction: column;
 }
 
 .introduction img {
     order: 1;
-    flex: 3;
-    max-width: 500px;
+    max-width: 600px;
     min-width: 400px;
-    max-height: 600px;
-    min-height: 400px;
-    grid-row: span 3;
-    grid-column: span 2;
+    max-height: 500px;
+    min-height: 200px;
+    border-radius: 20px;
 }
 
 .introduction div h1 {
-    flex: 1;
+    order: 1;
     color: #333;
     font-weight: 700;
     font-size: clamp(1.5rem, 40px, 3rem);
 }
 
+.introduction-bar {
+    order: 2;
+    background-color: #333;
+    padding: 2px;
+    height: 2px;
+    font-size: 2px;
+    border-radius: 20px;
+}
+
 .introduction div p {
-    flex: 3;
+    order: 3;
     color: #888;
     text-align: justify;
     font-weight: 600;
     font-size: clamp(1rem, 25px, 2rem);
+}
+
+@media (max-width: 800px) {
+    .introduction {
+        flex-wrap: wrap;
+    }
 }
 
 .description {
@@ -168,4 +179,75 @@ main {
     font-weight: 500;
     font-size: clamp(1rem, 15px, 2rem);
     width: 70vw;
+}
+
+.rules {
+    width: 65vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
+
+.rules-titles {
+    justify-content: center;
+    text-align: center;
+    font-weight: 500;
+}
+
+.rules-title {
+    font-size: clamp(2rem, 20px, 3rem);
+}
+
+.rules-subtitle {
+    font-size: clamp(1rem, 20px, 2rem);
+}
+
+.rules-row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+    width: 65vw;
+}
+
+.rules-box {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    height: 500px;
+    gap: 10px;
+    border-radius: 20px;
+    box-shadow: 0 0 5px #c1c1c1;
+}
+
+.rules-box:hover {
+    transform: scale(1.1);
+    transition: transform 0.1s ease-in;
+}
+
+.rules-box:not(:hover) {
+    transform: scale(1);
+    transition: transform 0.1s ease-out;
+}
+
+.rules-img {
+    width: 100%;
+    border-radius: 20px 20px 0 0;
+}
+
+.rules-text {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 5px;
+}
+
+.rules-text h3 {
+    text-align: center;
+}
+
+.rules-text p {
+    text-align: justify;
 }
