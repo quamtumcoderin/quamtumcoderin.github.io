@@ -10,6 +10,7 @@ export function toggleMenu() {
 
 export function applyColors() {
     const images = document.querySelectorAll('.rules-img')
+    const buttons = document.querySelectorAll('.buttons')
     const colors = [
         '#01273c',
         '#000000',
@@ -22,6 +23,8 @@ export function applyColors() {
     images.forEach((img, index) => {
         img.style.borderBottom = `6px solid ${colors[index]}`
     })
+    buttons[0].style.backgroundColor = colors[1]
+    buttons[1].style.backgroundColor = colors[2]
 }
 
 export function applyDelay() {
