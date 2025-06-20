@@ -238,6 +238,10 @@ main {
     border-radius: 20px 20px 0 0;
 }
 
+.rules-img:last-child {
+    padding-bottom: 65px;
+}
+
 .rules-text {
     flex: 1;
     display: flex;
