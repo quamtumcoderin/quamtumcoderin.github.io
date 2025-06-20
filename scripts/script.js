@@ -1,3 +1,4 @@
-import { toggleMenu } from "./dom.js"
+import { applyColors, toggleMenu } from "./dom.js"
 
 toggleMenu()
+applyColors()
