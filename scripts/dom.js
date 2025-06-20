@@ -24,7 +24,7 @@ export function applyColors() {
     })
 }
 
-export function desplaceImgBox() {
+export function applyDelay() {
     const imgBoxes = document.querySelectorAll('.rules-box')
     let delay = 0
 

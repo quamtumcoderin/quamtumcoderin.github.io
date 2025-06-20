@@ -1,5 +1,5 @@
-import { applyColors, desplaceImgBox, toggleMenu } from "./dom.js"
+import { applyColors, applyDelay, toggleMenu } from "./dom.js"
 
 toggleMenu()
 applyColors()
-desplaceImgBox()
+applyDelay()
