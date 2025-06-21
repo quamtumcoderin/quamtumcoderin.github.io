@@ -1,3 +1,5 @@
+import { getSimcoImg, getSimcoName } from "./simcotools.js"
+
 export function toggleMenu() {
     const toggle = document.querySelector('.menu-toggle')
     const menu = document.querySelector('.menu')
@@ -35,4 +37,25 @@ export function applyDelay() {
         box.style.animationDelay = `${delay}s`
         delay += 0.5
     })
+}
+
+export async function applyData() {
+    const images = document.querySelectorAll('.staff-image')
+    const names = document.querySelectorAll('.staff-name')
+    const IDs = [4293105, 4303454, 3682478, 4244317, 4599575, 3453453, 4396747, 4127079]
+
+    for(let i = 0; i < IDs.length; i++) {
+        const ID = IDs[i]
+
+        try {
+            const img = await getSimcoImg(ID)
+            const name = await getSimcoName(ID)
+
+            if(images[i]) images[i].src = img
+            if(images[i]) images[i].alt = ID
+            if(names[i]) names[i].textContent = name
+        } catch (e) {
+            console.error(`Error al aplicar los datos del ID ${ID}`, e.message)
+        }
+    }
 }
