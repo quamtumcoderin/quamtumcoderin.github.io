@@ -1,5 +1,5 @@
 const paths = {
-    API: 'https://api.simcotools.com/v1/'
+    API: 'https://cors-anywhere.herokuapp.com/https://api.simcotools.com/v1/'
 }
 
 export async function getSimcoImg(companyID) {
