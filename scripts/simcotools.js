@@ -33,7 +33,7 @@ export async function getSimcoName(companyID) {
 
             if(response) {
                 console.log(`Compañía encontrada en ${i}`)
-
+                console.log(response.data.company.name)
                 return response.data.company.name
             }
         } catch (error) {
