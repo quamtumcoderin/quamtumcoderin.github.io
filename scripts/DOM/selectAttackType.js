@@ -8,6 +8,8 @@ export default function selectAttackType() {
     const types = Object.keys(colors.types)
     const tColors = Object.values(colors.types)
 
+    if (!typeOneAttack || !selectAttackType) return
+
     types.forEach((type, index) => {
         const option = document.createElement('li')
         option.classList.add('option')
