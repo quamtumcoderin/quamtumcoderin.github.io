@@ -3,95 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inicio - Oremla</title>
-    <link rel="icon" href="assets/img/oremla_dark.png">
+    <title>WikiDex</title>
     <link rel="stylesheet" href="styles/style.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.10.0/axios.min.js" defer></script>
-    <script type="module" src="scripts/index.js" defer></script>
+    <script src="index.js" type="module"></script>
 </head>
 <body>
     <header>
-        <img class="icon-page" src="assets/img/oremla.png" alt="Icon">
-        <nav class="menu">
-            <button class="menu-toggle">Abrir menu</button>
-            <div class="menu-items">
-                <a href="index.html">Inicio</a>
-                <a href="html/history.html">Historia</a>
-                <a href="html/changes.html">Registro de Cambios</a>
-                <a href="html/blackbag">Bolsa Negra</a>
-                <a href="html/resources.html">Recursos</a>
-            </div>
-        </nav>
+        <button><a id="index.html" class="act">Inicio</a></button>
+        <h1>WikiDex</h1>
     </header>
-    <main>
-        <div class="container">
-            <section class="introduction">
-                <div>
-                    <div class="introduction-bar"></div> 
-                    <h1>Organización Empresarial Latina</h1>
-                    <p>Bienvenido, estas en la página de inicio de la web oficial de la Oremla. Disfruta de tu experiencia y recuerda que todo lo que se públique es de uso exclusivo para los miembros de la organización. Evita compartir datos importantes a otras organizaciones.</p>
-                </div>
-                <img src="assets/img/oremla_icon.png" alt="oremla_icon">
-            </section>
-            <section class="description">
-                <p>Este espacio ha sido diseñado para mantener conectados e informados a nuestros miembros oficiales, brindándoles un acceso a herramientas, estrategias y recursos clave para optimizar su crecimiento dentro de Sim Companies. Organización Empresarial Latina (Oremla) fue creada en un inicio para el cumplimiento seguro de Ordenes Gubernamentales, pero se tomó el enfoque de ayudar a quien lo necesite dentro del juego en una colaboración económica, primero en América Latina y ahora a todo el mundo.</p>
-                <p>Inicialmente esta página operaba en Odoo, pero debido a inconvenientes técnicos se tomó la decisión de trasladar toda la información a esta nueva página, más fresca, limpia y con mejor estética, siendo inmersiva y atractiva para los usuarios. Eso fué en el pasado porque la nueva incorporación de la Oremla ha innovado con sus altos conocimientos sobre Web Development por lo cual la página actual fué hecha desde cero con HTML, CSS y JavaScript; Hospedada en el servicio de GitHub Pages.</p>
-            </section>
-            <section class="rules">
-                <div class="rules-titles">
-                    <p class="rules-title">¿Piensas unirte? Hazlo ya</p>
-                    <p class="rules-subtitle">Requisitos y reglas</p>
-                </div>
-                <div class="rules-row">
-                    <article class="rules-box">
-                        <img class="rules-img" src="assets/img/simcompanies_img.png" alt="simcompanies_img">
-                        <div class="rules-text">
-                            <h3>Juega Sim Companies</h3>
-                            <p>Sé un jugador constante y con buena conducta de Sim Companies.</p>
-                        </div>
-                    </article>
-                    <article class="rules-box">
-                        <img class="rules-img" src="assets/img/oremla_icon.png" alt="oremla_icon">
-                        <div class="rules-text">
-                            <h3>Muestra tu apoyo a la organización</h3>
-                            <p>Coloca la imagen de OREMLA en tu descripción.</p>
-                            <a class="buttons" href="https://snipboard.io/Dfyu1q.jpg" target="_blank">OREMLA</a>
-                        </div>
-                    </article>
-                    <article class="rules-box">
-                        <img class="rules-img" src="assets/img/discord_logo.png" alt="discord_logo">
-                        <div class="rules-text">
-                            <h3>Convive con la comunidad</h3>
-                            <p>Unite al Server de Discord para hablar con los integrantes y ver los ¡MEMES!</p>
-                            <a class="buttons" href="https://discord.gg/rXVAPuur" target="_blank">Unete</a>
-                        </div>
-                    </article>
-                </div>
-                <div class="rules-row">
-                    <article class="rules-box">
-                        <img class="rules-img" src="assets/img/block.png" alt="block">
-                        <div class="rules-text">
-                            <h3>No reveles nuestros oscuros secretos</h3>
-                            <p>No queremos que revelen la información que nuestros miembros aportan para ayudar a la comunidad.</p>
-                        </div>
-                    </article>
-                    <article class="rules-box">
-                        <img class="rules-img" src="assets/img/countries_globe.png" alt="countries_globe">
-                        <div class="rules-text">
-                            <h3>Muestra tu bandera</h3>
-                            <p>Queremos tener un registro sobre el origen de las empresas para facilitar la comunicación entre nuestros miembros.</p>
-                        </div>
-                    </article>
-                    <article class="rules-box">
-                        <img class="rules-img" src="assets/img/apreton-de-manos.png" alt="support_img">
-                        <div class="rules-text">
-                            <h3>Ayúdanos a crecer</h3>
-                            <p>Invita a más jugadores para que la comunidad crezca, podrás obtener recompensas únicas.</p>
-                        </div>
-                    </article>
-                </div>
-            </section>
-        </div>
+    <main class="index-main">
+        <section class="grid">
+            <button class="btn element"><a id="html/defense.html" class="act">Defensa de los tipos</a></button>
+            <button class="btn element"><a id="html/attack.html" class="act">Ataque de los tipos</a></button>
+            <button class="btn element">Función</button>
+            <button class="btn element">Función</button>
+            <button class="btn element">Función</button>
+            <button class="btn element">Función</button>
+            <button class="btn element">Función</button>
+            <button class="btn element">Función</button>
+            <button class="btn element">Función</button>
+        </section>
     </main>
 </body>
 </html>
