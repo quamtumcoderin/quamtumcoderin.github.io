@@ -1,15 +1,16 @@
 import React, { useEffect, useRef, useState } from 'react'
+import anime from 'animejs'
 import './Navbar.css'
 
 export default function Navbar({ links = [], onNavigate, initialIndex }) {
     const containerRef = useRef(null)
     const linkRefs = useRef([])
     const indicatorRef = useRef(null)
-    const [ activeIndex, setActiveIndex ] = useState(initialIndex)
+    const [ activeIndex, setActiveIndex ] = useState(initialIndex ?? 0)
 
     linkRefs.current = links.map((_, i) => linkRefs.current[i] ?? React.createRef())
 
-    const moveIndicator = (index) => {
+    const animateIndicator = (index) => {
         const container = containerRef.current
         const target = linkRefs.current[index]?.current
         const indicator = indicatorRef.current
@@ -20,23 +21,23 @@ export default function Navbar({ links = [], onNavigate, initialIndex }) {
         const left = targetRect.left - containerRect.left
         const width = targetRect.width
 
-        indicator.style.transform = `translateX(${left}px)`
-        indicator.style.width = `${width}px`
+        anime({
+            targets: indicator,
+            translateX: left,
+            width: width,
+            easing: 'easeOutElastic(1, .6)',
+            duration: 700,
+        })
     }
 
     useEffect(() => {
-        moveIndicator(activeIndex)
+        animateIndicator(activeIndex)
     }, [activeIndex, links])
 
     useEffect(() => {
-        const handleResize = () => moveIndicator(activeIndex)
+        const handleResize = () => animateIndicator(activeIndex)
         window.addEventListener('resize', handleResize)
-        const ro = new ResizeObserver(() => moveIndicator(activeIndex))
-        if (containerRef.current) ro.observe(containerRef.current)
-        return () => {
-            window.removeEventListener("resize", handleResize)
-            ro.disconnect()
-        }
+        return () => window.removeEventListener('resize', handleResize)
     }, [activeIndex])
 
     const handleClick = (e, to, index) => {
@@ -77,7 +78,7 @@ export default function Navbar({ links = [], onNavigate, initialIndex }) {
                         <a
                             href={link.to ?? '#'}
                             role='menuitem'
-                            ref={(el) => (linkRefs.current[i].  current   = el)}
+                            ref={(el) => (linkRefs.current[i].current = el)}
                             className={`nav-link ${i ===    activeIndex ?  'active' : ''}`}
                             aria-current={i === activeIndex ?   'page' :  undefined}
                             onClick={(e) => handleClick(e, link.to, i)}
