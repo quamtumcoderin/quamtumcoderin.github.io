@@ -83,7 +83,7 @@ export default function App() {
 
 
   return (
-    <Router>
+    <Router basename='/Elder-Estrada'>
       <Navbar 
         links={links}
         colors={colors}
