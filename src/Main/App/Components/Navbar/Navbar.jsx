@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react'
-import anime from 'animejs'
+import { animate } from 'animejs'
 import './Navbar.css'
 
 export default function Navbar({ links = [], onNavigate, initialIndex }) {
@@ -21,12 +21,11 @@ export default function Navbar({ links = [], onNavigate, initialIndex }) {
         const left = targetRect.left - containerRect.left
         const width = targetRect.width
 
-        anime({
-            targets: indicator,
+        animate(indicator, {
             translateX: left,
             width: width,
             easing: 'easeOutElastic(1, .6)',
-            duration: 700,
+            duration: 200,
         })
     }
 

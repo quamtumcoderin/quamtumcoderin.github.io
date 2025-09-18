@@ -1,8 +1,6 @@
-/* eslint-disable no-unused-vars */
 import { Fragment } from 'react'
 import './HomePage.css'
-import { animate } from 'animejs'
-import Navbar from '../Navbar/Navbar'
+import Navbar from '../../Components/Navbar/Navbar.jsx'
 
 export default function HomePage() {
     const links = [
