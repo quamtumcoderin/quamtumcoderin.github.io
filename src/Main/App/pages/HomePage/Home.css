@@ -14,6 +14,7 @@
 }
 
 .main-title {
+    text-align: center;
     color: var(--main);
     font-size: clamp(4rem, 50px, 5rem);
     font-weight: 700;
@@ -49,4 +50,32 @@
 .button:nth-child(2) {
     color: var(--main);
     border: 1px solid;
+}
+
+@media (max-width: 600px) {
+    .main {
+        height: auto;
+        padding: 20px;
+    }
+
+    .main-title {
+        transition: font-size .5s;
+        font-size: clamp(2rem, 30px, 3rem);
+    }
+
+    .main-text {
+        transition: font-size .5s;
+        font-size: clamp(1rem, 15px, 1.5rem);
+    }
+
+    .controls {
+        transition: flex-direction .5s, min-width .5s;
+        flex-direction: column;
+        min-width: auto;
+    }
+
+    .button {
+        margin: 10px;
+        min-width: 200px;
+    }
 }
