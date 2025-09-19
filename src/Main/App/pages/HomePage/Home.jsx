@@ -1,5 +1,6 @@
 import { Fragment } from 'react'
 import Typewriter from '../../Components/Typewriter/Typewriter.jsx'
+import AnimatedButtons from '../../Components/AnimatedButtons/AnimatedButton.jsx'
 import './Home.css'
 
 export default function Home({colorUI = {}}) {
@@ -10,8 +11,8 @@ export default function Home({colorUI = {}}) {
                 <p className='main-text'>Frontend Developer</p>
                 <p className='main-text'>Passionate about beautiful and functional web experience</p>
                 <div className='controls'>
-                    <button className='button'>Contact me</button>
-                    <button className='button'>Download CV</button>
+                    <AnimatedButtons text={'Contact Me'} className='button' />
+                    <AnimatedButtons text={'Download'} className='button' />
                 </div>
             </main>
         </Fragment>

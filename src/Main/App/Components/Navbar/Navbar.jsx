@@ -67,6 +67,8 @@ export default function Navbar({ links = [], colors=[], initialIndex }) {
             linkRefs.current[next].current.focus()
             setActiveIndex(next)
             navigate(links[next].to)
+
+            setColorUI({ main: colors[next].main, light: colors[next].light })
         }
 
         if (e.key === 'ArrowLeft') {
@@ -75,6 +77,8 @@ export default function Navbar({ links = [], colors=[], initialIndex }) {
             linkRefs.current[prev].current.focus()
             setActiveIndex(prev)
             navigate(links[prev].to)
+
+            setColorUI({ main: colors[prev].main, light: colors[prev].light })
         }
     }
 
