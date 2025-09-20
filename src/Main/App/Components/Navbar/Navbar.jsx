@@ -1,15 +1,26 @@
 import React, { useEffect, useRef, useState } from 'react'
+import { useLocation } from 'react-router-dom'
 import { animate } from 'animejs'
 import { useNavigate } from 'react-router-dom'
 import './Navbar.css'
 
-export default function Navbar({ links = [], colors=[], initialIndex }) {
+export default function Navbar({ links = [], colors=[] }) {
     const containerRef = useRef(null)
     const linkRefs = useRef([])
     const indicatorRef = useRef(null)
-    const [ activeIndex, setActiveIndex ] = useState(initialIndex ?? 0)
 
+    const location = useLocation()
     const navigate = useNavigate()
+
+    const currentIndex = links.findIndex(link => link.to === location.pathname)
+    const [ activeIndex, setActiveIndex ] = useState(currentIndex >= 0 ? currentIndex : 0)
+
+    useEffect(() => {
+        if (currentIndex >= 0) {
+            setActiveIndex(currentIndex)
+            setColorUI({ main: colors[currentIndex].main, light: colors[currentIndex].light })
+        }
+    }, [location.pathname, currentIndex, colors])
 
     const [ colorUI, setColorUI ] = useState({
         main: colors[0].main,

@@ -1,9 +1,14 @@
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom'
+import $ from 'jquery'
+window.jQuery = $
+window.$ = $
 import {  useRef } from 'react'
+// eslint-disable-next-line no-unused-vars
 import { AnimatePresence, motion } from 'framer-motion'
 import Home from './pages/HomePage/Home.jsx'
 import About from './pages/AboutPage/About.jsx'
 import Navbar from './Components/Navbar/Navbar.jsx'
+
 
 function AnimatedRoutes({ links }) {
   const location = useLocation()
@@ -55,7 +60,7 @@ function AnimatedRoutes({ links }) {
               transition={pageTransition}
               style={{ position: 'absolute', width: '100%' }}
             >
-              <About colorUI={{ main: '#000dffff', light: '#9a9cdfff' }} />
+              <About colorUI={{ main: '#141dcdff', light: '#9a9cdfff' }} />
             </motion.div>
           }
         />
@@ -74,8 +79,8 @@ export default function App() {
   ]
 
   const colors = [
-    { main: '#2fff00ff', light: '#9ddf9a' },
-    { main: '#000dffff', light: '#9a9cdfff' },
+    { main: '#37c019ff', light: '#9ddf9a' },
+    { main: '#141dcdff', light: '#9a9cdfff' },
     { main: '#e5ff00ff', light: '#d4df9aff' },
     { main: '#ff9500ff', light: '#df9a9aff' },
     { main: '#ff0000ff', light: '#df9a9aff' },
@@ -86,8 +91,7 @@ export default function App() {
     <Router basename='/'>
       <Navbar 
         links={links}
-        colors={colors}
-        initialIndex={0} />
+        colors={colors} />
         <AnimatedRoutes links={links} />
     </Router>
   )
